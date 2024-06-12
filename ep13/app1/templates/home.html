@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .form-control:focus {
+        border-color: #66afe9;
+        outline: none;
+      }
+      .form-submit {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: 10 px solid blue;
+        border-radius: 50px;
+        cursor: pointer;
+        width: 100%;
+      }
+      .form-submit:hover {
+        background-color: #45a049;
+      }
+    </style>
+    {% comment %} End of css {% endcomment %} {% comment %}
+
+    <form action="https://formspree.io/f/mknlgndv" method="POST">
+      {{ form.as_p }}
+
+      <input type="submit" value="submit" />
+    </form>
+    {% endcomment %} {% comment %} much better way {% endcomment %} <br />
+    <form action="https://formspree.io/f/mknlgndv" method="POST">
+      {% for fm in form %} <br />
+      {{ form.label_tags }} <br />
+      {{ fm }} <br />
+      {% endfor %} <br />
+
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
