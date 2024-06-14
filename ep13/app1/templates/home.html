@@ -63,10 +63,12 @@
       <input type="submit" value="submit" />
     </form>
     {% endcomment %} {% comment %} much better way {% endcomment %} <br />
-    {% comment %} for success_page {% endcomment %} {% if messages %} {% for
-    message in messages %}
+    {% comment %} for success_page {% endcomment %} <br />
+    {% for message in messages %} <br />
+
     <div class="alert {{ message.tags }}">{{ message }}</div>
-    {% endfor %} {% endif %} {% comment %} end for success_page {% endcomment %}
+    {% endfor %} <br />
+    {% comment %} end for success_page {% endcomment %}
 
     <form action="" method="POST">
       {% for fm in form %} <br />
