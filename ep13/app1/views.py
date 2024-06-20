@@ -18,7 +18,8 @@ def home(request):
         message = request.POST["message"]
         # saving
         s = Student(name=name, email=email, phone=phone, message=message)
-        s.save()
+        if fm.is_valid():
+            s.save()
 
         # sent message alert
         messages.success(request, "Form submitted successfully!")
